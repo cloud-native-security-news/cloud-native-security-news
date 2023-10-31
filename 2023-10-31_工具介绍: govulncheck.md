@@ -7,7 +7,7 @@ changelog-v0.1.0: init
 
 ---
 
-# 1. Project/Tool Introduction: govulncheck go官方漏洞扫描工具 
+# 1. 工具介绍: govulncheck go官方漏洞扫描工具 
 
 项目地址：https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck
 
