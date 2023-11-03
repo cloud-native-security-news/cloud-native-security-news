@@ -132,4 +132,8 @@ $ podman unshare /bin/sh -c 'exit 3'; echo $?
 
 ## 拓展
 
-**[podman(1)](https://github.com/containers/podman/blob/main/docs/source/markdown/podman.1.md)** ,  **[podman-mount(1)](https://github.com/containers/podman/blob/main/docs/source/markdown/podman-mount.1.md)** ,  **namespaces(7)** ,  **newuidmap(1)** ,  **newgidmap(1)** , **user_namespaces(7)**
+**[podman(1)](https://github.com/containers/podman/blob/main/docs/source/markdown/podman.1.md)** ,  **[podman-mount(1)](https://github.com/containers/podman/blob/main/docs/source/markdown/podman-mount.1.md)** ,  **[namespaces(7)](https://man7.org/linux/man-pages/man7/namespaces.7.html)** ,  **[newuidmap(1)](https://man7.org/linux/man-pages/man1/newuidmap.1.html)** ,  **[newgidmap(1)](https://man7.org/linux/man-pages/man1/newgidmap.1.html)** , **[user_namespaces(7)](https://man7.org/linux/man-pages/man7/user_namespaces.7.html)**
+
+## 参考
+
++ [podman/docs/source/markdown/podman-unshare.1.md at main · containers/podman (github.com)](https://github.com/containers/podman/blob/main/docs/source/markdown/podman-unshare.1.md)
