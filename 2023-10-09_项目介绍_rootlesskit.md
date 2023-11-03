@@ -1,11 +1,8 @@
 ---
-
 tags: 云原生安全资讯,项目介绍
 spec version: v0.2.4
 version: v0.1.0
-
 ---
-
 # 项目介绍: rootlesskit
 
 * 项目地址：https://github.com/rootless-containers/rootlesskit
@@ -35,7 +32,7 @@ RootlessKit 是为了以非特权用户运行 Docker 和 Kubernetes 而设计的
 * [podman unshare](https://github.com/containers/libpod/blob/master/docs/source/markdown/podman-unshare.1.md)
 * [become-root](https://github.com/giuseppe/become-root)
 
-## 3. How 
+## 3. How
 
 ### 3.1 How to use
 
@@ -106,13 +103,13 @@ root@m:~# cat /proc/self/uid_map
 
 这意味着 user ns 中的 uid 和host uid 的映射关系为 ：
 
-| Host UID | UserNS UID |
-| -- | -- |
-| 1000 | 0 |
-| 100000 | 1 |
-| 100001 | 2 |
-| … | … |
-| 165535 | 65536 |
+| Host UID | UserNS UID |
+| -------- | ---------- |
+| 1000     | 0          |
+| 100000   | 1          |
+| 100001   | 2          |
+| …       | …         |
+| 165535   | 65536      |
 
 #### (2) network namespaces
 
@@ -234,6 +231,6 @@ func Parent(opt Opt) error {
 * https://github.com/rootless-containers/rootlesskit/
 * https://rootlesscontaine.rs/how-it-works/
 
-----
+---
 
-> 本文使用[云原生安全资讯：项目推荐](https://github.com/ssst0n3/security-research-specification/blob/main/cloud-native-security-news/project-introduction.md)作为文档基线
+> 本文使用[云原生安全资讯：项目推荐](https://github.com/cloud-native-security-news/spec/blob/main/project-introduction.md)作为文档基线

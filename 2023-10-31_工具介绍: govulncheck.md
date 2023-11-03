@@ -1,13 +1,10 @@
 ---
-
 tags: Cloud Native Security News,Project Introduction
 spec version: v0.2.4
 version: v0.1.0
 changelog-v0.1.0: init
-
 ---
-
-# 1. 工具介绍: govulncheck go官方漏洞扫描工具 
+# 1. 工具介绍: govulncheck go官方漏洞扫描工具
 
 项目地址：https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck
 
@@ -37,6 +34,7 @@ Govulncheck 仅报告适用于当前 Go 版本的漏洞。请注意，不同的�
 ## 1.4 Try
 
 我试用了一下，效果还不错：
+
 ```
 ~/pentest_target/testproject master                                                     10:56:12
 ❯ govulncheck ./...
@@ -71,7 +69,7 @@ Vulnerability ssst0n3/testproject#2: GO-2022-0533
 
 代码量不大，可以简单分析一下该工具的大致流程。
 
-----
+---
 
 支持对源码和二进制扫描。
 
@@ -116,7 +114,7 @@ func loadPackages(patterns []string, dir string) ([]*vulncheck.Package, error) {
 }
 ```
 
-----
+---
 
 从采集的package中列出所有的module
 
@@ -131,7 +129,7 @@ func Source(ctx context.Context, pkgs []*Package, cfg *Config) (_ *Result, err e
 }
 ```
 
-----
+---
 
 从远端的漏洞数据库查询module相关的漏洞。
 
@@ -167,6 +165,6 @@ func Binary(ctx context.Context, exe io.ReaderAt, cfg *Config) (_ *Result, err e
 }
 ```
 
-----
+---
 
-> 本文使用[云原生安全资讯：项目推荐](https://github.com/ssst0n3/security-research-specification/blob/main/cloud-native-security-news/project-introduction.md)作为文档基线
+> 本文使用[云原生安全资讯：项目推荐](https://github.com/cloud-native-security-news/spec/blob/main/project-introduction.md)作为文档基线
