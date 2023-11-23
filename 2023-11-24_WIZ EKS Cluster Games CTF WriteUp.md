@@ -144,7 +144,7 @@ root@wiz-eks-challenge:~# crane auth login docker.io -u eksclustergames -p dckr_
 
 查看 pod 的镜像得到 flag
 
-```json
+```bash
 root@wiz-eks-challenge:~# crane config docker.io/eksclustergames/base_ext_image
 {
 ....
