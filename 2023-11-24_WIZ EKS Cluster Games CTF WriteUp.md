@@ -145,7 +145,7 @@ root@wiz-eks-challenge:~# crane auth login docker.io -u eksclustergames -p dckr_
 查看 pod 的镜像得到 flag
 
 ```json
-oot@wiz-eks-challenge:~# crane config docker.io/eksclustergames/base_ext_image
+root@wiz-eks-challenge:~# crane config docker.io/eksclustergames/base_ext_image
 {
 ....
       "created_by": "RUN sh -c echo 'wiz_eks_challenge{xxxxxx}' > /flag.txt # buildkit",
