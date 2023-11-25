@@ -1,0 +1,209 @@
+# Hack.lu-Qualifier-2023 k8s Writeup
+
+## Challenge1: Bat Kube
+
+### 1. challenge
+
+Unlucky, the flag is in Kubernetes and im not joking :/
+
+`nc k8s.0xf.eu 8888`
+
+Helpfull links:
+
+* [How to use Kubeconfig](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+* [How to use Kubectl](https://kubernetes.io/docs/reference/kubectl/)
+* [MAYBE useful](https://kubernetes.io/docs/reference/access-authn-authz/authorization/)
+
+### 2. 分析
+
+`nc k8s.0xf.eu 8888` 会返回 `kubeconfig`。使用其可访问 k8s 服务器，要求获取其中的flag。
+
+```
+$ nc k8s.0xf.eu 8888
+
+Creating Cluster
+Waiting for control plane............................................
+Here is your Kubeconfig:
+
+apiVersion: v1
+clusters:
+- cluster:
+    server: https://flux-cluster-[...].0xf.eu
+  name: ctf-cluster
+contexts:
+- context:
+    cluster: ctf-cluster
+    user: ctf-player
+  name: ctf-cluster
+[...]
+users:
+- name: ctf-player
+  user:
+    token: ey[...]
+
+Leave this open until you solved the challenge, otherwise your cluster will be deleted. Please save it to a file and use it with kubectl --kubeconfig or use the KUBECONFIG env.
+```
+
+### 3. writeup
+
+#### 3.1 secret 
+
+```
+$ kubectl get secrets
+NAME                        TYPE     DATA   AGE
+kube-baby-flag-part1-of-3   Opaque   2      19m
+
+$ kubectl get secret kube-baby-flag-part1-of-3 -o json
+{
+    "apiVersion": "v1",
+    "data": {
+        "flag": "ZmxhZ3trOHNfMXNf",
+        "hint": "RG8geW91IGtub3cgbmFtZXNwYWNlcz8="
+    },
+    "kind": "Secret",
+    "metadata": {
+        "creationTimestamp": "2023-10-15T18:01:39Z",
+        "name": "kube-baby-flag-part1-of-3",
+        "namespace": "default",
+        "resourceVersion": "343",
+        "uid": "189b12ef-ccf0-4129-a514-0bcf0af6bf5b"
+    },
+    "type": "Opaque"
+}
+
+$ echo "ZmxhZ3trOHNfMXNf" | base64 -d
+flag{k8s_1s_
+
+$ echo "RG8geW91IGtub3cgbmFtZXNwYWNlcz8=" | base64 -d
+Do you know namespaces?
+```
+
+#### 3.2 namespace
+
+secret-namespace 下有 pod
+
+```
+$ kubectl get namespaces
+NAME               STATUS   AGE
+default            Active   17m
+kube-node-lease    Active   17m
+kube-public        Active   17m
+kube-system        Active   17m
+secret-namespace   Active   17m
+
+$ kubectl get -n secret-namespace pods
+NAME                                         READY   STATUS    RESTARTS   AGE
+kube-baby-flag-part2-of-3-6b97f47974-l4m4c   1/1     Running   0          6m31s
+kube-baby-flag-part2-of-3-6b97f47974-lwjhr   1/1     Running   0          6m31s
+```
+
+pod 的 command `while true; do printenv FLAG FLAG_HINT; sleep 300; done` 打印了 FLAG
+
+```
+$ kubectl -n secret-namespace describe pod kube-baby-flag-part2-of-3-6b97f47974-l4m4c
+Name:             kube-baby-flag-part2-of-3-6b97f47974-l4m4c
+Namespace:        secret-namespace
+Priority:         0
+Service Account:  default
+Node:             flux-cluster-70242a9687044f909bd0571cc5f96729-md-0-nm45q-glz8zw/172.18.0.16
+Start Time:       Mon, 16 Oct 2023 02:01:57 +0800
+Labels:           app=kube-baby
+                  pod-template-hash=6b97f47974
+Annotations:      cni.projectcalico.org/containerID: 31b8bbb91caf8ca6b3f84ccf981a4b2b99c06631b065ba72570d4ae6ada70230
+                  cni.projectcalico.org/podIP: 192.168.57.1/32
+                  cni.projectcalico.org/podIPs: 192.168.57.1/32
+Status:           Running
+IP:               192.168.57.1
+IPs:
+  IP:           192.168.57.1
+Controlled By:  ReplicaSet/kube-baby-flag-part2-of-3-6b97f47974
+Containers:
+  container:
+    Container ID:  containerd://800270fabc75babb831388a8c7a635c6eeb089f8624c60dce768430900187018
+    Image:         nginx
+    Image ID:      docker.io/library/nginx@sha256:b4af4f8b6470febf45dc10f564551af682a802eda1743055a7dfc8332dffa595
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      /bin/sh
+    Args:
+      -c
+      while true; do printenv FLAG FLAG_HINT; sleep 300; done
+    State:          Running
+      Started:      Mon, 16 Oct 2023 02:02:15 +0800
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      INSECURE_FLAG:  Its a baby challenge, but this would be too easy... :D
+      FLAG:           <set to the key 'flag' in secret 'kube-baby-flag-part2-of-3-user-should-not-see-this'>  Optional: false
+      FLAG_HINT:      <set to the key 'hint' in secret 'kube-baby-flag-part2-of-3-user-should-not-see-this'>  Optional: false
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-rv6pl (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-rv6pl:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:                      <none>
+```
+
+查看该 pod 的日志可以获得 2/3 的flag
+
+```
+$ kubectl -n secret-namespace logs  kube-baby-flag-part2-of-3-6b97f47974-l4m4c
+r34lly_fun_but
+What about Flags in the Kubernetes API?
+r34lly_fun_but
+What about Flags in the Kubernetes API?
+r34lly_fun_but
+What about Flags in the Kubernetes API?
+r34lly_fun_but
+What about Flags in the Kubernetes API?
+```
+
+#### 3.3 Kubernetes API
+
+```
+$ kubectl api-resources
+...
+flags                                          ctf.fluxfingers.hack.lu/v1             true         Flag
+...
+
+$ kubectl -n secret-namespace get flags
+NAME                        HINT
+kube-baby-flag-part3-of-3   You are on the right track, look more in detail!
+
+
+$ kubectl -n secret-namespace describe flags kube-baby-flag-part3-of-3
+Name:         kube-baby-flag-part3-of-3
+Namespace:    secret-namespace
+Labels:       <none>
+Annotations:  <none>
+API Version:  ctf.fluxfingers.hack.lu/v1
+Kind:         Flag
+Metadata:
+  Creation Timestamp:  2023-10-15T18:01:41Z
+  Generation:          1
+  Resource Version:    361
+  UID:                 a3c60559-8b5d-4e63-a482-b7b55afb9edc
+Spec:
+  Flag:  XzF0c18zdjNuX2IzdHQzcl8xbl9DVEZTfQ==
+  Hint:  You are on the right track, look more in detail!
+Events:  <none>
+$ echo XzF0c18zdjNuX2IzdHQzcl8xbl9DVEZTfQ== | base64 -d
+_1ts_3v3n_b3tt3r_1n_CTFS}
+```
+
+`flag{k8s_1s_r34lly_fun_but_1ts_3v3n_b3tt3r_1n_CTFS}`
