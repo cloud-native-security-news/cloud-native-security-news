@@ -1,7 +1,8 @@
 ---
 
 tags: Cloud Native Security News, k8s, aws
-version: v0.1.0
+version: v0.1.1
+changelog-v0.1.1: add publish suffix
 
 ---
 
@@ -585,8 +586,6 @@ aws s3 cp s3://challenge-flag-bucket-3ff1ae2/flag -
 本文发布已获得"云原生安全资讯"项目授权, 同步发布于以下平台
 
 * github: [https://github.com/cloud-native-security-news/cloud-native-security-news](https://github.com/cloud-native-security-news/cloud-native-security-news)
-* 知乎专栏: [云原生安全资讯](https://www.zhihu.com/column/c_1694733563684151296)
-* 公众号: 石头的安全料理屋
 * 公众号: 听雨安全
 * blog: [tari Blog](https://tari.moe)
 
