@@ -1,8 +1,11 @@
 ---
-tags: Cloud Native Security News,Project Introduction
+
+tags: Cloud Native Security News,Project Introduction,golang
 spec version: v0.2.4
-version: v0.1.0
+version: v0.1.1
+changelog-v0.1.1: add publish suffix
 changelog-v0.1.0: init
+
 ---
 # 1. 工具介绍: govulncheck go官方漏洞扫描工具
 
@@ -168,3 +171,9 @@ func Binary(ctx context.Context, exe io.ReaderAt, cfg *Config) (_ *Result, err e
 ---
 
 > 本文使用[云原生安全资讯：项目推荐](https://github.com/cloud-native-security-news/spec/blob/main/project-introduction.md)作为文档基线
+
+本文发布已获得"云原生安全资讯"项目授权, 同步发布于以下平台
+
+* github: [https://github.com/cloud-native-security-news/cloud-native-security-news](https://github.com/cloud-native-security-news/cloud-native-security-news)
+
+欢迎加入 "云原生安全资讯"项目 👏 阅读、学习和总结云原生安全相关资讯

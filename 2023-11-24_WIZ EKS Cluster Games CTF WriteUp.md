@@ -1,7 +1,8 @@
 ---
 
 tags: Cloud Native Security News, k8s, aws
-version: v0.1.0
+version: v0.1.1
+changelog-v0.1.1: add publish suffix
 
 ---
 
@@ -579,3 +580,13 @@ export AWS_SESSION_TOKEN="IQoJb3JpZ2luX2VjEOX//////////wEaCXVzLXdlc3QtMSJHMEUCIQ
 ```bash
 aws s3 cp s3://challenge-flag-bucket-3ff1ae2/flag - 
 ```
+
+----
+
+本文发布已获得"云原生安全资讯"项目授权, 同步发布于以下平台
+
+* github: [https://github.com/cloud-native-security-news/cloud-native-security-news](https://github.com/cloud-native-security-news/cloud-native-security-news)
+* 公众号: 听雨安全
+* blog: [tari Blog](https://tari.moe)
+
+欢迎加入 "云原生安全资讯"项目 👏 阅读、学习和总结云原生安全相关资讯
