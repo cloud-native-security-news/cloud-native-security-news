@@ -1,8 +1,12 @@
 ---
+
 tags: 云原生安全资讯,项目介绍
 spec version: v0.2.4
-version: v0.1.0
+version: v0.1.1
+changelog-v0.1.1: add publish suffix
+
 ---
+
 # 项目介绍: rootlesskit
 
 * 项目地址：https://github.com/rootless-containers/rootlesskit
@@ -240,7 +244,5 @@ func Parent(opt Opt) error {
 * github: [https://github.com/cloud-native-security-news/cloud-native-security-news](https://github.com/cloud-native-security-news/cloud-native-security-news)
 * 知乎专栏: [云原生安全资讯](https://www.zhihu.com/column/c_1694733563684151296)
 * 公众号: 石头的安全料理屋
-* 公众号: 听雨安全
-* blog: [tari Blog](https://tari.moe)
 
 欢迎加入 "云原生安全资讯"项目 👏 阅读、学习和总结云原生安全相关资讯
