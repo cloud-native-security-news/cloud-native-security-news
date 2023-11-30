@@ -1,7 +1,8 @@
 ---
 
 tags: Cloud Native Security News, k8s, aws
-version: v0.1.1
+version: v0.1.2
+changelog-v0.1.2: 发布至 石头的安全料理屋
 changelog-v0.1.1: add publish suffix
 
 ---
@@ -587,6 +588,7 @@ aws s3 cp s3://challenge-flag-bucket-3ff1ae2/flag -
 
 * github: [https://github.com/cloud-native-security-news/cloud-native-security-news](https://github.com/cloud-native-security-news/cloud-native-security-news)
 * 公众号: 听雨安全
+* 公众号: 石头的安全料理屋
 * blog: [tari Blog](https://tari.moe)
 
 欢迎加入 "云原生安全资讯"项目 👏 阅读、学习和总结云原生安全相关资讯
