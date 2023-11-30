@@ -46,9 +46,5 @@ Unikernel 是一种为云化而设计的轻量级操作系统构建方式，具�
 本文发布已获得"云原生安全资讯"项目授权, 同步发布于以下平台
 
 * github: [https://github.com/cloud-native-security-news/cloud-native-security-news](https://github.com/cloud-native-security-news/cloud-native-security-news)
-* 知乎专栏: [云原生安全资讯](https://www.zhihu.com/column/c_1694733563684151296)
-* 公众号: 石头的安全料理屋
-* 公众号: 听雨安全
-* blog: [tari Blog](https://tari.moe)
 
 欢迎加入 "云原生安全资讯"项目 👏 阅读、学习和总结云原生安全相关资讯
