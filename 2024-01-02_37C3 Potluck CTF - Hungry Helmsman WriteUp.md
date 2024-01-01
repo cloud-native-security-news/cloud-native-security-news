@@ -3,7 +3,7 @@ tags: 云原生安全资讯
 version: v0.1.0
 ---
 
-文章转载自：[37C3 Potluck CTF Hungry Helmsman writeup - 在酒吧喝牛奶的牛仔|微信公众号](https://mp.weixin.qq.com/s/81MBJxulmuQri8NPXEH0UA) 
+文章转载自：[37C3 Potluck CTF Hungry Helmsman writeup - 在酒吧喝牛奶的牛仔|微信公众号](https://mp.weixin.qq.com/s/81MBJxulmuQri8NPXEH0UA) （已获作者授权）
 
 > Welcome, chefs of the Kubernetes kitchen! The hungry Helmsman is on the lookout for a unique feast, and his palate is set on flags. Embark on the "Hungry Helmsman" challenge, where Kubernetes prowess meets culinary finesse. Craft the ultimate deployment to reveal the flag!          
 >         
