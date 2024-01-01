@@ -9,6 +9,7 @@
 
 ## 云原生安全资讯索引
 
++ [2024.01.01 - 文章转载：37C3 Potluck CTF Hungry Helmsman WriteUp](./2024-01-01_37C3%20Potluck%20CTF%20-%20Hungry%20Helmsman.md) - k8s 题目 externalIPs 知识点
 + [2023.12.14 - Azure容器实例首次跨租户容器接管漏洞(下)](./2023-12-14_Azure容器实例首次跨租户容器接管漏洞(下).md)
 + [2023.12.12 - Azure 容器实例首个跨租户容器接管漏洞（上）](./2023-12-12_Azure容器实例首次跨租户容器接管漏洞(上).md)
 + [2023.11.27 - Hack.lu-Qualifier-2023 k8s Writeup](./2023-11-27_Hack.lu-Qualifier-2023_k8s_Writeup.md)
