@@ -4,7 +4,7 @@
 
 1. 在 issues 中添加或处理 '待分析资讯'
 2. 每天阅读安全咨询
-3. 总结成文章, 模板参见 [security-research-specification](https://github.com/cloud-native-security-news/spec/blob/main/project-introduction.md)
+3. 总结成文章, 模板参见 [security-research-specification](https://github.com/cloud-native-security-news/spec)
 4. push 总结至 git 仓库
 
 ## 云原生安全资讯索引
