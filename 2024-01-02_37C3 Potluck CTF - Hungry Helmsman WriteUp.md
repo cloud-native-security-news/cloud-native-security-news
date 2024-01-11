@@ -1,7 +1,12 @@
 ---
+
 tags: 云原生安全资讯
-version: v0.1.0
+version: v0.1.1
+changelog-v0.1.1: add reproduce env
+
 ---
+
+> @ssst0n3: 主办方环境已下线，我制作了一个复现环境，参见：https://github.com/ssst0n3/HungryHelmsman_Reproduce
 
 文章转载自：[37C3 Potluck CTF Hungry Helmsman writeup - 在酒吧喝牛奶的牛仔 | 微信公众号](https://mp.weixin.qq.com/s/81MBJxulmuQri8NPXEH0UA) （已获作者授权）
 
