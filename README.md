@@ -4,11 +4,12 @@
 
 1. 在 issues 中添加或处理 '待分析资讯'
 2. 每天阅读安全咨询
-3. 总结成文章, 模板参见 [security-research-specification](https://github.com/cloud-native-security-news/spec/blob/main/project-introduction.md)
+3. 总结成文章, 模板参见 [security-research-specification](https://github.com/cloud-native-security-news/spec)
 4. push 总结至 git 仓库
 
 ## 云原生安全资讯索引
 
++ [2024.01.08 - 云漏洞案例: Unit42: GKE组合漏洞 k8s 提权](./2024-01-08_%E4%BA%91%E6%BC%8F%E6%B4%9E%E6%A1%88%E4%BE%8B_Unit42_GKE%E7%BB%84%E5%90%88%E6%BC%8F%E6%B4%9E_k8s%E6%8F%90%E6%9D%83.md)
 + [2024.01.01 - 文章转载：37C3 Potluck CTF Hungry Helmsman WriteUp](./2024-01-02_37C3%20Potluck%20CTF%20-%20Hungry%20Helmsman%20WriteUp.md) - k8s 题目 externalIPs 知识点
 + [2023.12.14 - Azure容器实例首次跨租户容器接管漏洞(下)](./2023-12-14_Azure容器实例首次跨租户容器接管漏洞(下).md)
 + [2023.12.12 - Azure 容器实例首个跨租户容器接管漏洞（上）](./2023-12-12_Azure容器实例首次跨租户容器接管漏洞(上).md)
