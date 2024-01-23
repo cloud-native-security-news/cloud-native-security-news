@@ -7,14 +7,11 @@ author: tari
 
 ---
 
-# 云漏洞案例 | Unit42: GKE Autopilot 从容器逃逸到接管k8s集群并持久化后门
+# 1. 云漏洞案例 | Unit42: GKE Autopilot 从容器逃逸到接管k8s集群并持久化后门
 
 > 原文地址: https://unit42.paloaltonetworks.com/gke-autopilot-vulnerabilities/
 
-## Autopilot介绍
-
-2021年2月，谷歌发布了一种新的 GKE 操作模式：[Autopilot](https://cloud.google.com/blog/products/containers-kubernetes/introducing-gke-autopilot)
-
+## 1.1 简介
 2021年6月，Unit42 安全研究员 Yuval Avrahami 披露了 GKE Autopilot 的严重漏洞
 
 1. 容器逃逸至Node节点
@@ -22,6 +19,10 @@ author: tari
 3. 持久化并使得k8s集群管理员无法发现
 
 只要攻击者获取到了一个 Autopilot 的开发者账号，就能拿下整个k8s集群
+
+## 1.2 Autopilot介绍
+
+2021年2月，谷歌发布了一种新的 GKE 操作模式：[Autopilot](https://cloud.google.com/blog/products/containers-kubernetes/introducing-gke-autopilot)
 
 在 GKE 标准模式中，客户需要管理自己的集群基础设施，并按节点付费。使用 GKE Autopilot，谷歌会负责集群基础设施的管理，客户只需为其运行的 Pods 付费。这使得客户可以集中精力在他们的应用程序上，从而减少运营成本。
 
@@ -53,7 +54,7 @@ author: tari
 
 可以看到，其实用户的 Autopilot 是受限的，比如无法访问 kube-system 命名空间，如果能绕过 Autopilot 的安全策略，就可以创建一个对用户来说不可见的持久化后门
 
-## 容器逃逸至Node节点
+## 1.3 容器逃逸至Node节点
 
 Autopilot 集群有一个比较有意思的 CRD `allowlistedworkloads` 
 
@@ -86,13 +87,13 @@ Autopilot 集群有一个比较有意思的 CRD `allowlistedworkloads`
 4. 攻击者获得对底层 Kubelet 凭据的访问，几乎可以查看所有集群对象。
 5. 最后，由于 Autopilot 仅按运行中的 pod 收费，一些用户可能已经滥用这一问题来减少一些成本，直接在节点上运行某些工作负载。
 
-## Node节点提权至k8s集群管理员
+## 1.4 Node节点提权至k8s集群管理员
 
 内置策略禁用了 kube-system 的 sa，但没有禁用 kube-system pod
 
 ![Untitled](./image/2024-01-21/Untitled%209.png)
 
-文章用到了 [sa-hunter](https://github.com/twistlock/sa-hunter)（现合入 https://github.com/PaloAltoNetworks/rbac-police）可以方便查看 pod 的 sa 权限信息
+文章用到了 [sa-hunter](https://github.com/twistlock/sa-hunter)（现合入 https://github.com/PaloAltoNetworks/rbac-police ）可以方便查看 pod 的 sa 权限信息
 
 ![Untitled](./image/2024-01-21/Untitled%2010.png)
 
@@ -110,22 +111,20 @@ Autopilot 集群有一个比较有意思的 CRD `allowlistedworkloads`
 
 基于前面容器逃逸基础上利用，我们只需要把恶意pod部署在存在 `stackdriver-metadata-agent-cluster-level` 或 `metrics-server` pod 的节点上。虽然 Autopilot 会禁止部署带有 `nodeSelectors` 的pod，不过它允许最简单形式的节点指派方式 —— [nodeName](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodename) 字段 （只要目标节点有足够资源容纳该pod，pod就会调度到该节点上）
 
-## 后门webhook
+## 1.5 后门webhook
 
 ![Untitled](./image/2024-01-21/Untitled%2013.png)
 
 既然是通过 webhook 限制权限，那么也可以加个 webhook，特定请求不限制权限，这里通过创建 [mutating admission webhooks](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#mutatingadmissionwebhook) 可以做到监听（篡改）任意 k8s 的创建和修改操作，
 
-[GKE Autopilot - Unrestricted Administrator and Invisible Backdoor](https://www.youtube.com/watch?v=4Dddhk1QclY)
+整条攻击链演示: [GKE Autopilot - Unrestricted Administrator and Invisible Backdoor](https://www.youtube.com/watch?v=4Dddhk1QclY)
 
-整条攻击链演示
-
-## 其他问题
+## 1.6 其他问题
 
 1. 默认命名空间 `csi-attacher` 和 `otelsvc` 的 sa 也被 Autopilot policy 放到白名单中，如果攻击者能拿到默认命名空间权限，就可以利用这两个 sa 进行上述操作接管集群
 2. 利用 CVE-2020-8554 通过 Load Balancer 服务攻击节点，但是需要管理员特权才能利用。这里的攻击场景是攻击者已经拿下了 Autopilot 集群，并且正在寻找绕过内置策略来建立一个隐蔽的后门。
 
-## 修复和改进
+## 1.7 修复和改进
 
 1. 集群管理员现在可以列出、查看，甚至创建变更准入 Webhooks，防止它们被滥用作为隐形后门；
 2. 谷歌加强了白名单工作负载（`allowlistedworkloads`）的验证过程；
@@ -134,7 +133,7 @@ Autopilot 集群有一个比较有意思的 CRD `allowlistedworkloads`
 5. `csi-attacher` 和 `otelsvc` 服务账户不再免除Autopilot 的policy ；
 6. 谷歌[开源了一个 OPA Gatekeeper 策略](https://www.notion.so/Prometheus-61fb4c533e274513951725597b51c305?pvs=21)，该策略限制了在攻击中被滥用的 kube-system pods。该策略阻止这些 pods 将新的服务账户分配给现有的 pod。更多信息请参见 [GKE 的加固指南](https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster#restrict_self_modify)。
 
-## 缓解此类漏洞
+## 1.8 缓解此类漏洞
 
 在生产环境这些pod管理起来挺复杂的，特别是有业务需求的时候，可以从下面几点着手：
 
@@ -142,3 +141,10 @@ Autopilot 集群有一个比较有意思的 CRD `allowlistedworkloads`
 2. 如果pod是外部解决方案的一部分，联系云提供商或者项目裁剪掉不必要权限。如果pod用来管理k8s服务，应该把它作为控制面控制器；
 3. 通过 OPA Gatekeeper 去限制和监测 pod 的危险操作，因为 k8s 权限多且泛，分配合理的 pod 权限比较难控制，但一般 pod 业务上是不会执行一些较敏感或危险操作的。
 4. 使用 [Taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)、 [NodeAffinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity) 或 [PodAntiAffinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity) 规则将高权限 pods 与不可信或公开的 pods 隔离开来，确保它们不在同一个节点上运行。
+
+## 1.9 总结
+yuval 提出的 GKE Autopilot 服务特有的攻击面很好，类似的 托管 k8s 服务都存在类似的攻击面：
+
+1. 集群管理员依赖 云厂商 的策略来防止有风险的配置，该策略可能绕过
+2. 集群管理员并没有集群的完全控制权限，如果攻击者可以获得比管理员更高的权限，可进行更隐蔽的持久化和权限维持
+3. 类似的托管 k8s 服务仅按运行中的 pod 收费，一些用户可能逃逸到节点上直接运行某些工作负载来躲避收费
