@@ -87,7 +87,7 @@ Autopilot 集群有一个比较有意思的 CRD `allowlistedworkloads`
 
 ## 1.4 Node节点提权至k8s集群管理员
 
-内置策略禁用了 kube-system 的 sa，但没有禁用 kube-system pod
+Autopilot 完全移除了对 kube-system 的 serviceaccount 的限制, 因此被窃取的kube-system serviceaccount token 可以放心使用，不用担心上文提到的策略限制。
 
 ![Untitled](./image/2024-01-21/Untitled%209.png)
 
