@@ -77,15 +77,13 @@ Autopilot 集群有一个比较有意思的 CRD `allowlistedworkloads`
 1. 滥用挂载的 containerd 套接字来创建一个挂载宿主文件系统的特权容器。
 2. 让该特权容器安装一个 systemd 服务，该服务可以让节点反弹 shell 到攻击者控制的机器。
 
-[GKE Autopilot - Pod Masquerading as Datadog Agent](https://youtu.be/0cZJklJxTQk)
+漏洞演示：[GKE Autopilot - Pod Masquerading as Datadog Agent](https://youtu.be/0cZJklJxTQk)
 
-漏洞影响：
+在 Autopilot 服务中可以创建 pod 的攻击者可以利用此漏洞进入到node，造成以下影响：
 
-1. 攻击者控制相邻的 pod 及其服务账户令牌，可能会升级权限并蔓延到其他命名空间。
-2. 攻击者可以查询节点的实例元数据端点以获取访问令牌。默认情况下，此令牌提供对客户项目中云存储的读取权限。
-3. 由于 Autopilot 管理员无法访问节点，攻击者可能会滥用这一问题在节点上安装隐蔽的恶意软件或加密货币挖矿程序。不过Autopilot 会自动扩容和缩容节点，因此确保恶意软件持续存在并不简单。
-4. 攻击者获得对底层 Kubelet 凭据的访问，几乎可以查看所有集群对象。
-5. 最后，由于 Autopilot 仅按运行中的 pod 收费，一些用户可能已经滥用这一问题来减少一些成本，直接在节点上运行某些工作负载。
+1. 由于 Autopilot 管理员无法访问节点，攻击者可能会滥用这一问题在节点上安装隐蔽的恶意软件或加密货币挖矿程序。不过Autopilot 会自动扩容和缩容节点，因此确保恶意软件持续存在并不简单。
+2. 攻击者获得对底层 Kubelet 凭据的访问，几乎可以查看所有集群对象。
+3. 由于 Autopilot 仅按运行中的 pod 收费，一些用户可能已经滥用这一问题来减少一些成本，直接在节点上运行某些工作负载。
 
 ## 1.4 Node节点提权至k8s集群管理员
 
