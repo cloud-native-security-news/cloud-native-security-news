@@ -344,3 +344,12 @@ curl -k -X POST https://kyverno-svc.kyverno.svc.cluster.local./mutate -H "Conten
 > 
 
 这种利用手段主要是在实际利用中获取敏感信息，并不是所有开发都会把敏感信息放 secret 里的（亲身体验
+
+----
+
+本文发布已获得"云原生安全资讯"项目授权, 同步发布于以下平台
+
+* github: [https://github.com/cloud-native-security-news/cloud-native-security-news](https://github.com/cloud-native-security-news/cloud-native-security-news)
+* blog: [tari Blog](https://tari.moe)
+
+欢迎加入 "云原生安全资讯"项目 👏 阅读、学习和总结云原生安全相关资讯
