@@ -5,7 +5,7 @@ version: v0.1.0
 
 ---
 
-# 云原生安全资讯:  WIZ K8S LAN PARTY CTF Walkthrough
+# 云原生安全资讯:  WIZ CTF | K8S LAN PARTY  Walkthrough
 
 比赛地址：[K8s LAN Party](https://www.k8slanparty.com)
 

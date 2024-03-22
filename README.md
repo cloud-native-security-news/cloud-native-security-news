@@ -9,7 +9,7 @@
 
 ## 云原生安全资讯索引
 
-+ [2024.03.22 - WIZ K8S LAN PARTY CTF Walkthrough](./2024-03-22_wiz_k8s_lan_party_ctf_walkthrough.md) - 云原生网络安全 CTF WriteUp 
++ [2024.03.22 - WIZ CTF | K8S LAN PARTY  Walkthrough](./2024-03-22_wiz_k8s_lan_party_ctf_walkthrough.md) - 云原生网络安全 CTF WriteUp 
 + [2024.03.08 - ReqsMiner: Automated Discovery of CDN Forwarding Request Inconsistencies and DoS Attacks with Grammar-based Fuzzing](./2024-03-08_CDN转发请求不一致导致的DoS攻击.md) - 论文阅读：CDN 转发请求不一致导致的 DoS 攻击
 + [2024.02.22 - Unit42 攻击面管理威胁报告 2023](./2024-02-22_Unit42_ASM_Threat_Report_2023.md)
 + [2024.02.04 - CVE-2022-0492导致的容器逃逸无法复现原因分析](./2024-02-04_CVE-2022-0492导致的容器逃逸无法复现原因分析.md)
