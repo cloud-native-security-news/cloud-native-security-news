@@ -63,7 +63,7 @@ player@wiz-k8s-lan-party:~$ dnscan -subnet 10.100.0.1/16
 curl getflag-service.k8s-lan-party.svc.cluster.local.
 ```
 
-Esonhugh 师傅写了个挺好用的工具：[https://github.com/Esonhugh/k8spider](https://github.com/Esonhugh/k8spider) 除了service的ip域名反解，同时集成了SRV端口信息收集和域传递漏洞功能，目前我也把 CoreDNS Wildcards 特性也PR上去了
+Esonhugh 师傅写了个挺好用的工具：[https://github.com/Esonhugh/k8spider](https://github.com/Esonhugh/k8spider) 除了service的ip域名反解，同时集成了SRV端口信息收集、CoreDNS Wildcards 特性 和 域传递漏洞功能
 
 ## 0x02 FINDING NEIGHBOURS
 
