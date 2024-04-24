@@ -3,7 +3,8 @@
 tags: 云原生安全资讯,项目介绍
 spec version: v0.2.4
 version: v0.1.1
-changelog-v0.1.1: add publish suffix
+changelog:
+  - v0.1.1: add publish suffix
 
 ---
 
