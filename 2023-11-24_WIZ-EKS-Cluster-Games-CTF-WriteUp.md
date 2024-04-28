@@ -1,9 +1,11 @@
 ---
 
 tags: Cloud Native Security News, k8s, aws
-version: v0.1.2
-changelog-v0.1.2: 发布至 石头的安全料理屋
-changelog-v0.1.1: add publish suffix
+version: v0.1.3
+changelog:
+  - v0.1.3: update filename, metadata
+  - v0.1.2: 发布至 石头的安全料理屋
+  - v0.1.1: add publish suffix
 
 ---
 
