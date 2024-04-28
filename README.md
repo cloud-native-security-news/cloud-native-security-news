@@ -1,6 +1,6 @@
 # cloud-native-security-news
 
-## 加入云原生安全资讯项目
+## 加入 [云原生安全资讯项目](https://github.com/cloud-native-security-news/cloud-native-security-news)
 
 1. 在 issues 中添加或处理 '待分析资讯'
 2. 每天阅读安全咨询
