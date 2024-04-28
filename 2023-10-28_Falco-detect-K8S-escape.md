@@ -1,8 +1,10 @@
 ---
 
 tags: 云原生安全资讯,k8s,falco
-version: v0.1.0
-changelog-v0.1.1: add publish suffix
+version: v0.1.2
+changelog:
+  - v0.1.2: update metadata format; rename filename
+  - v0.1.1: add publish suffix
 
 ---
 
