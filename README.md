@@ -14,7 +14,7 @@
 + [2024.02.22 - Unit42 攻击面管理威胁报告 2023](./2024-02-22_Unit42_ASM_Threat_Report_2023.md)
 + [2024.02.04 - CVE-2022-0492导致的容器逃逸无法复现原因分析](./2024-02-04_CVE-2022-0492导致的容器逃逸无法复现原因分析.md)
 + [2024.01.22 - 云漏洞案例 | Unit42: GKE Autopilot 从容器逃逸到接管k8s集群并持久化后门](./2024-01-22_云漏洞案例_Unit42_GKE%20Autopilot%20从容器逃逸到接管k8s集群并持久化后门.md)
-+ [2024.01.08 - 云漏洞案例: Unit42: GKE组合漏洞 k8s 提权](./2024-01-08_%E4%BA%91%E6%BC%8F%E6%B4%9E%E6%A1%88%E4%BE%8B_Unit42_GKE%E7%BB%84%E5%90%88%E6%BC%8F%E6%B4%9E_k8s%E6%8F%90%E6%9D%83.md)
++ [2024.01.08 - 云漏洞案例: Unit42: GKE组合漏洞 k8s 提权](./2024-01-08_Unit42_GKE_k8s-escalation.md)
 + [2024.01.01 - 文章转载：37C3 Potluck CTF Hungry Helmsman WriteUp](./2024-01-02_37C3-Potluck-CTF_Hungry-Helmsman_WriteUp.md) - k8s 题目 externalIPs 知识点
 + [2023.12.14 - Azure容器实例首次跨租户容器接管漏洞(下)](./2023-12-14_azure-container-instances(2).md)
 + [2023.12.12 - Azure 容器实例首个跨租户容器接管漏洞（上）](./2023-12-12_azure-container-instances(1).md)
