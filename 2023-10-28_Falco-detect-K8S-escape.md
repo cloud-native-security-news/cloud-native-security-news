@@ -1,8 +1,9 @@
 ---
 
 tags: 云原生安全资讯,k8s,falco
-version: v0.1.2
+version: v0.1.3
 changelog:
+  - v0.1.3: update image path
   - v0.1.2: update metadata format; rename filename
   - v0.1.1: add publish suffix
 
@@ -20,7 +21,7 @@ changelog:
 
 攻击者通过 `cat /proc/1/cgroup` 发现是容器环境，通过 [cdk](https://github.com/cdk-team/CDK) 收集容器信息
 
-![1698460544954](image/2023.10.28_通过Falco检测K8S容器逃逸行为/1698460544954.png)
+![1698460544954](./image/2023.10.28_通过Falco检测K8S容器逃逸行为/1698460544954.png)
 
 运行 cdk 后，由于 cdk 不属于镜像原有的二进制文件，便触发 [Drop and execute new binary in container](https://github.com/falcosecurity/rules/blob/falco-rules-2.0.0/rules/falco_rules.yaml#L1171) 规则告警
 
@@ -66,7 +67,7 @@ changelog:
 ....
 ```
 
-![1698468600557](image/2023.10.28_通过Falco检测K8S容器逃逸行为/1698468600557.png)
+![1698468600557](./image/2023.10.28_通过Falco检测K8S容器逃逸行为/1698468600557.png)
 
 攻击者获取到容器权限后进行后渗透时就能及时发现
 
@@ -107,7 +108,7 @@ helm upgrade falco -n falco -f values.yaml --set driver.kind=ebpf --set tty=true
 
 所写的 Falco 是劫持系统调用参数，尽管 shell 执行命令存在混淆，也一样可以识别到
 
-![1698481090034](image/2023.10.28_通过Falco检测K8S容器逃逸行为/1698481090034.png)
+![1698481090034](./image/2023.10.28_通过Falco检测K8S容器逃逸行为/1698481090034.png)
 
 ## 4. K8S 安装 Falco 和排障
 
