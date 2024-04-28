@@ -1,9 +1,11 @@
 ---
 
 tags: Cloud Native Security News,云漏洞案例,Azure
-spec version: v0.1.2
-version: v0.1.0
 author: tarimoe
+spec_version: v0.1.2
+version: v0.1.1
+changelog:
+  - v0.1.1: update filename, metadata
 
 ---
 
