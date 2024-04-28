@@ -1,9 +1,11 @@
 ---
 
 tags: Cloud Native Security News,云漏洞案例
-spec version: v0.1.3
-version: v0.1.0
 author: ssst0n3
+spec_version: v0.1.3
+version: v0.1.1
+changelog:
+  - v0.1.1: update filename, metadata
 
 ---
 
