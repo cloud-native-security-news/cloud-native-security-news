@@ -1,8 +1,10 @@
 ---
 
 tags: 云原生安全资讯, podman
-version: v0.1.1
-changelog-v0.1.1: add publish suffix
+spec: v0.2.5
+version: v0.1.2
+  - v0.1.2: update filename, metadata, image
+  - v0.1.1: add publish suffix
 
 ---
 
@@ -51,7 +53,7 @@ uid=0(root) gid=0(root) groups=0(root)
 
 这个 "root" 并不是真正意义上的 root，只是通过 [user_namespaces(7)](https://man7.org/linux/man-pages/man7/user_namespaces.7.html) 对 uid 和 gid 作了一个映射而已
 
-![1698934838010](image/2023-11-02/1698934838010.png)
+![1698934838010](./image/2023-11-02/1698934838010.png)
 
 比如我们查看一下 `/etc/shadow` 文件还是权限不足的
 
