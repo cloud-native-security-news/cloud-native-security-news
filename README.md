@@ -13,7 +13,7 @@
 + [2024.03.08 - ReqsMiner: Automated Discovery of CDN Forwarding Request Inconsistencies and DoS Attacks with Grammar-based Fuzzing](./2024-03-08_CDN转发请求不一致导致的DoS攻击.md) - 论文阅读：CDN 转发请求不一致导致的 DoS 攻击
 + [2024.02.22 - Unit42 攻击面管理威胁报告 2023](./2024-02-22_Unit42_ASM_Threat_Report_2023.md)
 + [2024.02.04 - CVE-2022-0492导致的容器逃逸无法复现原因分析](./2024-02-04_CVE-2022-0492导致的容器逃逸无法复现原因分析.md)
-+ [2024.01.22 - 云漏洞案例 | Unit42: GKE Autopilot 从容器逃逸到接管k8s集群并持久化后门](./2024-01-22_云漏洞案例_Unit42_GKE%20Autopilot%20从容器逃逸到接管k8s集群并持久化后门.md)
++ [2024.01.22 - 云漏洞案例 | Unit42: GKE Autopilot 从容器逃逸到接管k8s集群并持久化后门](./2024-01-22_Unit42_GKE-Autopilot.md)
 + [2024.01.08 - 云漏洞案例: Unit42: GKE组合漏洞 k8s 提权](./2024-01-08_Unit42_GKE_k8s-escalation.md)
 + [2024.01.01 - 文章转载：37C3 Potluck CTF Hungry Helmsman WriteUp](./2024-01-02_37C3-Potluck-CTF_Hungry-Helmsman_WriteUp.md) - k8s 题目 externalIPs 知识点
 + [2023.12.14 - Azure容器实例首次跨租户容器接管漏洞(下)](./2023-12-14_azure-container-instances(2).md)
