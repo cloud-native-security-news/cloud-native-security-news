@@ -3,7 +3,7 @@
 tags: Cloud Native Security News,Project Introduction,golang
 spec_version: v0.2.5
 version: v0.1.2
-changelog
+changelog:
   - v0.1.2: recover file; update metadata; update filename
   - v0.1.1: add publish suffix
   - v0.1.0: init
