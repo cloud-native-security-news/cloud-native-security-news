@@ -3,6 +3,7 @@
 tags: 云原生安全资讯, podman
 spec: v0.2.5
 version: v0.1.2
+changelog:
   - v0.1.2: update filename, metadata, image
   - v0.1.1: add publish suffix
 
