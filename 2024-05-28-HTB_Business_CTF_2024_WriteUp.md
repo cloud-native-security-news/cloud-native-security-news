@@ -1175,9 +1175,9 @@ Selected snapshot with id snap-00197900d5ed8277e
 Output Path: ..../snap-00197900d5ed8277e.img
 Truncating file to 1.0 GB
 ```
+这种快照 volatility 分析不了，eson师傅补充说这是磁盘取证，想了下确实是这么回事，平常都是对快照的内存镜像分析的（比如 VMware 的 .vmem），不会对备份的磁盘进行分析。然后，这里我下载的是备份盘的，根据 volume-id 对比 describe instance 可以知道。然后为啥 D 盘备份盘有系统盘的 SAM、SYSTEM 咧。估计是出题方为了照顾下载问题，30G 太大，网络不好容易经常断。
 
-这种快照 volatility 分析不了，可以用 
-
+这里可以用
 [libguestfs, library for accessing and modifying VM disk images](https://libguestfs.org/)
 
 debian系 系统装起来更方便，直接 apt 就能装
