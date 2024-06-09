@@ -1,8 +1,10 @@
 ---
 
 tags: Cloud Native Security News, k8s
-version: v0.1.1
-changelog-v0.1.1: add publish suffix
+version: v0.1.2
+changelog:
+  - v0.1.2: update filename, metadata
+  - v0.1.1: add publish suffix
 
 ---
 

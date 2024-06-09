@@ -1,9 +1,11 @@
 ---
 
 tags: Cloud Native Security News,云漏洞案例,Azure
-spec version: v0.1.2
-version: v0.1.0
 author: tarimoe
+spec_version: v0.1.2
+version: v0.1.1
+changelog:
+  - v0.1.1: update filename, metadata
 
 ---
 
@@ -25,7 +27,7 @@ Unit 42发现的第二个问题是 bridge pod 中的服务器端请求伪造（S
 https://<nodeIP>:10250/exec/<customer-namespace>/<customer-pod>/<customer-ctr>?command=<url-encoded-cmd>&error=1&input=1&output=1&tty=1
 ```
 
-bridge 需要以某种方式填充尖括号<>中缺失的参数，其中 `<nodeIP>` 的值是从客户 pod 的 `status.hostIP` 字段中获取的。当节点被授权更新其 pod 的状态（例如，更新其 pod 的 `status.state` 字段为 `Running`、`Terminated` 等）时就比较有用了。
+bridge 需要以某种方式填充尖括号 `<>` 中缺失的参数，其中 `<nodeIP>` 的值是从客户 pod 的 `status.hostIP` 字段中获取的。当节点被授权更新其 pod 的状态（例如，更新其 pod 的 `status.state` 字段为 `Running`、`Terminated` 等）时就比较有用了。
 
 尝试使用受控节点的token 更改我们 pod 的 `status.hostIP` 字段，hostIP 字段更新了，但在一两秒后，api-server 将 `hostIP` 字段更正为原始值。虽然更改没有持久化，但并没有什么能阻止我们反复更新这个字段。
 
@@ -41,7 +43,7 @@ Unit 42随后发现到 api-server 实际上并不验证 `status.hostIP` 的值�
 
 `hostIP` 值会让 bridge 将 `exec` 请求发送到以下 URL：
 
-https://**<apiserver-nodeIP>:10250/exec/kube-system/<apiserver-pod-name>/<apiserver-ctr>?command=<url-encoded-command>&error=1&input=1&output=1&tty=1**<u>#</u>:10250/exec/<customer-namespace>/<customer-pod-name>/<customer-ctr-name>?command=<command>&error=1&input=1&output=1&tty=1
+`https://**<apiserver-nodeIP>:10250/exec/kube-system/<apiserver-pod-name>/<apiserver-ctr>?command=<url-encoded-command>&error=1&input=1&output=1&tty=1**<u>#</u>:10250/exec/<customer-namespace>/<customer-pod-name>/<customer-ctr-name>?command=<command>&error=1&input=1&output=1&tty=1`
 
 使用 # 后缀确保 URL 的其余部分被视为[URI fragment](https://en.wikipedia.org/wiki/URI_fragment)，从而忽略后面的异常部分。我们将我们的 pod 的 `status.hostIP` 设置为这个值，并通过 `az container exec` 执行命令，利用成功并获得 api-server 容器的 shell。
 

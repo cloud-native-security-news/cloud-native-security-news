@@ -1,10 +1,12 @@
 ---
 
 tags: Cloud Native Security News,Project Introduction,golang
-spec version: v0.2.4
-version: v0.1.1
-changelog-v0.1.1: add publish suffix
-changelog-v0.1.0: init
+spec_version: v0.2.5
+version: v0.1.2
+changelog:
+  - v0.1.2: recover file; update metadata; update filename
+  - v0.1.1: add publish suffix
+  - v0.1.0: init
 
 ---
 # 1. 工具介绍: govulncheck go官方漏洞扫描工具

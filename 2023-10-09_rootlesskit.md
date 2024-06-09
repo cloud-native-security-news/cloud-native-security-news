@@ -1,9 +1,11 @@
 ---
 
 tags: 云原生安全资讯,项目介绍
-spec version: v0.2.4
-version: v0.1.1
-changelog-v0.1.1: add publish suffix
+spec_version: v0.2.5
+version: v0.1.2
+changelog:
+  - v0.1.2: update metadata format
+  - v0.1.1: add publish suffix
 
 ---
 

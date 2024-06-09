@@ -1,9 +1,11 @@
 ---
 
 tags: Cloud Native Security News,云漏洞案例,Azure
-spec version: v0.1.2
-version: v0.1.0
 author: tarimoe
+spec_version: v0.1.2
+version: v0.1.1
+changelog:
+  - v0.1.1: update filename, metadata
 
 ---
 
@@ -71,7 +73,7 @@ RunC v1.0.0-rc2 发布于 2016 年 10 月 1 日，它至少存在两个已知的
 
 这些节点的 Kubelet 允许匿名访问。因此，Unit 42 尝试访问其他节点上的 Kubelets，但所有请求都因超时而失败，这应该是防火墙配置阻止了节点之间的通信。
 
-每个节点上都有一个指向集群名称的引用，在 kubernetes.azure.com/cluster 标签中，格式为：CAAS-PROD-<LOCATION>-LINUX-<ID>。
+每个节点上都有一个指向集群名称的引用，在 kubernetes.azure.com/cluster 标签中，格式为：`CAAS-PROD-<LOCATION>-LINUX-<ID>`。
 
 
 ![Figure 6. Cluster name.](./image/2023-12-11_Azure容器实例中的多租户容器接管/Figure6.png)

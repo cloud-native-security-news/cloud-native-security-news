@@ -1,8 +1,10 @@
 ---
 
 tags: 云原生安全资讯
-version: v0.1.1
-changelog-v0.1.1: add reproduce env
+version: v0.1.2
+changelog:
+  - v0.1.2: update filename, metadata
+  - v0.1.1: add reproduce env
 
 ---
 
