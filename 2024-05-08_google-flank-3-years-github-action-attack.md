@@ -5,7 +5,7 @@ version: v0.1.0
 
 ---
 
-# 云原生安全咨询：谷歌Flank潜藏3年的Github Action供应链攻击
+# 云原生安全资讯：谷歌Flank潜藏3年的Github Action供应链攻击
 
 > 🌐 本文首发于【国际云安全联盟CSA】公众号
 [https://mp.weixin.qq.com/s/-fO-ElGSt6bCXC2nEHVInQ](https://mp.weixin.qq.com/s/-fO-ElGSt6bCXC2nEHVInQ)
