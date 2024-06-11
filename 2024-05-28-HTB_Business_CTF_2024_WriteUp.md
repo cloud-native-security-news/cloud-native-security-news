@@ -16,7 +16,7 @@ version: v0.1.0
 > We have obtained leaked data pertaining to Vault 101, with suspicion that it may be linked to one of the leaders group. Your task is to analyze and extract pertinent information from the provided data. The flag is the ARN wrapped in HTB{} .
 > 
 
-[cloud_scurried.zip](image/2024-05-28/cloud_scurried.zip)
+[cloud_scurried.zip](./image/2024-05-28/cloud_scurried.zip)
 
 附件 txt 文件有一串 `AROAXYAFLIG2BLQFIIP34` ，题目描述需要提交用 HTB{} 包裹的 `ARN` （Amazon Resource Name）
 
@@ -29,15 +29,15 @@ version: v0.1.0
 
 我们登陆到 aws，然后访问 iam → 角色 → 创建角色
 
-![Untitled](image/2024-05-28/Untitled.png)
+![Untitled](./image/2024-05-28/Untitled.png)
 
 因为要自定义角色 ID，并选择 自定义信任策略，根据上面文档的角色ID在 `Principal` 的写法
 
-![Untitled](image/2024-05-28/Untitled%201.png)
+![Untitled](./image/2024-05-28/Untitled%201.png)
 
 这里有报错，不要紧，因为我们还没有这个角色引用，直接下一步即可，然后不用选一直下一步，给策略随便写个名字，创建成功后点击我们新建的角色，然后在信任关系就能看到由角色 ID 解析出来易于识别的 ARN 了，vault101 ARN 就拿到了～
 
-![Untitled](image/2024-05-28/Untitled%202.png)
+![Untitled](./image/2024-05-28/Untitled%202.png)
 
 > HTB{arn:aws:iam::532587168180:role/vault101}
 > 
@@ -47,7 +47,7 @@ version: v0.1.0
 > We have obtained leaked account pertaining to Vault 101, with suspicion that it may be linked to one of the leaders group. Your task is to enumerate and see if we can infiltrate them internally.
 > 
 
-[cloud_protrude.zip](image/2024-05-28/cloud_protrude.zip)
+[cloud_protrude.zip](./image/2024-05-28/cloud_protrude.zip)
 
 这次附件给了 AKSK 
 
@@ -115,7 +115,7 @@ version: v0.1.0
 
 原来是 AD 域里的一台机器，有个访问地址，访问 AccessUrl：vault101.awsapps.com
 
-![Untitled](image/2024-05-28/Untitled%203.png)
+![Untitled](./image/2024-05-28/Untitled%203.png)
 
 看标题，像是 AWS 里部署的，搜了下发现是个 [WorkDocs](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/workdocs/index.html)，一个个看了下，emmm，基本都要传个 id 之类的，然后也没枚举出来这个权限，不过像这种要传入参数的，不一定能枚举出来？！
 
@@ -178,7 +178,7 @@ version: v0.1.0
 
 把附件下下来即可拿到 flag
 
-![Untitled](image/2024-05-28/Untitled%204.png)
+![Untitled](./image/2024-05-28/Untitled%204.png)
 
 > HTB(AWS_WORKDOCS_CAN_HAVE_USEFUL_STUFF)
 > 
@@ -193,7 +193,7 @@ version: v0.1.0
 > Username: vaultuser
 > 
 
-[cloud_metarooted.zip](image/2024-05-28/cloud_metarooted.zip)
+[cloud_metarooted.zip](./image/2024-05-28/cloud_metarooted.zip)
 
 附件提供一个 ssh 私钥，连上去即可，根据描述我们要提权到 root 用户
 
@@ -398,7 +398,7 @@ curl 'https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=<access_token>
 > This carving is thought to hold the key for accessing the mythical vault in the clouds that is rumored to hold as much gold as the legendary underground vault. After a long search, you manage to find the vault at [http://34.29.127.192](http://34.29.127.192/). Can you get in?
 > 
 
-[cloud_cloudofsmoke.zip](image/2024-05-28/cloud_cloudofsmoke.zip)
+[cloud_cloudofsmoke.zip](./image/2024-05-28/cloud_cloudofsmoke.zip)
 
 F12 发现背景图 URL 是从谷歌存储里的
 
@@ -456,7 +456,7 @@ Average throughput: 974.2kiB/s
 
 枚举一下这个服务账号的权限
 
-![Untitled](image/2024-05-28/Untitled%205.png)
+![Untitled](./image/2024-05-28/Untitled%205.png)
 
 发现还有个备份的key
 
@@ -754,7 +754,7 @@ sppPjk7IpkrtQyfJ0IXC => {
 
 这下就差个密码了，密码是哈希过的，结合前面的 backup-key 其中第一个就是密码明文，然后 secret 是 totp 二步验证的密钥。然后去一开始的站点用账号密码登录后，在输入二步验证码就拿到 flag 了
 
-![Untitled](image/2024-05-28/Untitled%206.png)
+![Untitled](./image/2024-05-28/Untitled%206.png)
 
 > HTB{th3_v4ULt_1s_0n_f1r3!}
 > 
@@ -777,7 +777,7 @@ All done 💫
 backuptime: 2.858s
 ```
 
-![Untitled](image/2024-05-28/Untitled%207.png)
+![Untitled](./image/2024-05-28/Untitled%207.png)
 
 当然，总有一些工具或者脚本不用改就能用的
 
@@ -786,7 +786,7 @@ backuptime: 2.858s
 > Upon thorough investigation, we have come across AWS Identity and Access Management (IAM) keys within a publicly accessible Git repository. Our initial suspicion is that these keys are associated with Vault11. However, we are seeking further clarification and confirmation on this matter. We kindly request your assistance in delving deeper into the situation to ascertain the precise ownership of these keys and to explore potential strategies for internally addressing any security vulnerabilities they may pose.
 > 
 
-[cloud_asceticism.zip](image/2024-05-28/cloud_asceticism.zip)
+[cloud_asceticism.zip](./image/2024-05-28/cloud_asceticism.zip)
 
 附件也是给了个 AKSK 
 
@@ -1609,19 +1609,19 @@ An error occurred (AccessDeniedException) when calling the GetSecretValue operat
 
 账户 ID 就是 ARN 里的账户 ID
 
-![Untitled](image/2024-05-28/Untitled%208.png)
+![Untitled](./image/2024-05-28/Untitled%208.png)
 
 访问 s3 去拿一开始我们访问不到的 flag
 
-![Untitled](image/2024-05-28/Untitled%209.png)
+![Untitled](./image/2024-05-28/Untitled%209.png)
 
 依次点进 flag.txt，在点下载或者打开
 
-![Untitled](image/2024-05-28/Untitled%2010.png)
+![Untitled](./image/2024-05-28/Untitled%2010.png)
 
 就能拿到 flag了
 
-![Untitled](image/2024-05-28/Untitled%2011.png)
+![Untitled](./image/2024-05-28/Untitled%2011.png)
 
 > HTB{W15D0M_15_5uFF3R1Ng_kA1_d3n_aGaP1_aF70}
 > 
