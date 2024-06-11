@@ -10,7 +10,7 @@
 ## 云原生安全资讯索引
 
 + [2024.05.28 - HTB Business CTF 2024 WriteUp](./2024-05-28-HTB_Business_CTF_2024_WriteUp.md) - 云方向
-+ [2024.05.08 - 谷歌Flank潜藏3年的Github Action供应链攻击](./2024-05-08_谷歌Flank潜藏3年的Github%20Action供应链攻击.md) - 一个不寻常的 Github Action 注入漏洞
++ [2024.05.08 - 谷歌Flank潜藏3年的Github Action供应链攻击](./2024-05-08_google-flank-3-years-github-action-attack.md) - 一个不寻常的 Github Action 注入漏洞
 + [2024.03.22 - WIZ CTF | K8S LAN PARTY  Walkthrough](./2024-03-22_wiz_k8s_lan_party_ctf_walkthrough.md) - 云原生网络安全 CTF WriteUp 
 + [2024.03.08 - ReqsMiner: Automated Discovery of CDN Forwarding Request Inconsistencies and DoS Attacks with Grammar-based Fuzzing](./2024-03-08_CDN-Dos.md) - 论文阅读：CDN 转发请求不一致导致的 DoS 攻击
 + [2024.02.22 - Unit42 攻击面管理威胁报告 2023](./2024-02-22_Unit42_ASM_Threat_Report_2023.md)
