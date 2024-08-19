@@ -9,6 +9,7 @@
 
 ## 云原生安全资讯索引
 
++ [2024.08.10 - BlackHat2024_AWS影子资源实现账户接管](./2024-08-10_BlackHat2024_AWS影子资源实现账户接管.md)
 + [2024.05.28 - HTB Business CTF 2024 WriteUp](./2024-05-28-HTB_Business_CTF_2024_WriteUp.md) - 云方向
 + [2024.05.08 - 谷歌Flank潜藏3年的Github Action供应链攻击](./2024-05-08_google-flank-3-years-github-action-attack.md) - 一个不寻常的 Github Action 注入漏洞
 + [2024.03.22 - WIZ CTF | K8S LAN PARTY  Walkthrough](./2024-03-22_wiz_k8s_lan_party_ctf_walkthrough.md) - 云原生网络安全 CTF WriteUp 
