@@ -34,7 +34,9 @@ K8sGPT 是一个开源项目，旨在通过集成先进的人工智能技术来�
 
 ## 3. How
 
-<img src="image/demo4.gif" width=650px; />
+通过 cli 分析集群问题：
+
+<img src="image/2024-11-27/demo4.gif" width=650px; />
 
 ## 4. milestone
 
