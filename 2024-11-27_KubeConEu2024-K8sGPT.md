@@ -32,21 +32,25 @@ K8sGPT 是一个开源项目，旨在通过集成先进的人工智能技术来�
 2. 同样的问题会反复出现。
 3. 人类可以发现问题，而AI可以提供解决问题的方案。
 
-## 3. milestone
+## 3. How
+
+<img src="images/demo4.gif" width=650px; />
+
+## 4. milestone
 
 * 2023-03-28 发布 release 0.1.0
 * 2023-04-11 Github项目获得 1000 star
 * 2023-04-27 发布diyige Operator 版本
 * 2023-12-19 加入 CNCF Sandbox
 
-## 4. 未来计划
+## 5. 未来计划
 
 * 增加与更多云服务商的集成
 * 支持对CRDs的扫描
 * 提供额外的通知渠道，例如slack等
 * 与其他AI/ML工具集成
 
-## 5. 思考
+## 6. 思考
 
 作为 Operator 引入到 k8s 集群中，可能会带来新的风险：
 
