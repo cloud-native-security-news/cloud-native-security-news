@@ -20,6 +20,7 @@ version: v0.1.0
 |                 | [video](https://www.youtube.com/watch?v=jbpIFCkEEng)      |
 |                 | [slide](https://static.sched.com/hosted_files/kccnceu2024/65/Mastering%20GPU%20Management%20in%20Kubernetes%20Using%20the%20Operator%20Pattern.pptx.pdf)      |
 
+使用gpu-operator 自动在k8s集群中安装、管理运行gpu容器所必须的驱动和软件，并监控健康状态。	
 
 ## 1. What
 
