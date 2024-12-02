@@ -9,6 +9,7 @@
 
 ## 云原生安全资讯索引
 
++ [2024.12.02 - [KubeCon + CloudNativeCon Europe 2024]: Mastering GPU Management in Kubernetes Using the Operator Pattern](./2024-12-02_nvidia-k8s-gpu-operator.md)
 + [2024.11.27 - [KubeCon + CloudNativeCon Europe 2024] The State of K8sGPT: Your Troubleshooting Companion](./2024-11-27_KubeConEu2024-K8sGPT.md)
 + [2024.11.21 - [KubeCon + CloudNativeCon Europe 2024] Living off the Land Techniques in Managed Kubernetes Clusters - Ronen Shustin&Shay Berkovich, Wiz](./2024-11-21_LOTL-in-K8S.md)
 + [2024.08.10 - BlackHat2024_AWS影子资源实现账户接管](./2024-08-10_BlackHat2024_AWS影子资源实现账户接管.md)
