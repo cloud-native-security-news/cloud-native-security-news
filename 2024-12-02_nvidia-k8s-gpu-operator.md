@@ -194,7 +194,32 @@ Loading NVIDIA driver kernel modules...
 Starting NVIDIA persistence daemon...
 Mounting NVIDIA driver rootfs...
 Done, now waiting for signal
-
+$ lsmod |grep nvidia
+nvidia_modeset       1343488  0
+nvidia_uvm           4665344  2
+nvidia              54206464  12 nvidia_uvm,nvidia_modeset
+drm                   622592  4 drm_kms_helper,nvidia,cirrus
+$ kubectl exec nvidia-driver-daemonset-wm2h7 -n gpu-operator -- nvidia-smi
+Mon Dec  2 09:31:13 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.90.07              Driver Version: 550.90.07      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla T4                       On  |   00000000:00:0D.0 Off |                    0 |
+| N/A   28C    P8              9W /   70W |       1MiB /  15360MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
 ```
 
 为了安装内核驱动，提供了privileged
@@ -275,32 +300,6 @@ time="2024-12-02T08:16:14Z" level=info msg="Installing toolkit"
 time="2024-12-02T08:16:14Z" level=info msg="disabling device node creation since --cdi-enabled=false"
 time="2024-12-02T08:16:14Z" level=info msg="Installing NVIDIA container toolkit to '/usr/local/nvidia/toolkit'"
 ...
-$ lsmod |grep nvidia
-nvidia_modeset       1343488  0
-nvidia_uvm           4665344  2
-nvidia              54206464  12 nvidia_uvm,nvidia_modeset
-drm                   622592  4 drm_kms_helper,nvidia,cirrus
-$ kubectl exec nvidia-driver-daemonset-wm2h7 -n gpu-operator -- nvidia-smi
-Mon Dec  2 09:31:13 2024       
-+-----------------------------------------------------------------------------------------+
-| NVIDIA-SMI 550.90.07              Driver Version: 550.90.07      CUDA Version: 12.4     |
-|-----------------------------------------+------------------------+----------------------+
-| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
-|                                         |                        |               MIG M. |
-|=========================================+========================+======================|
-|   0  Tesla T4                       On  |   00000000:00:0D.0 Off |                    0 |
-| N/A   28C    P8              9W /   70W |       1MiB /  15360MiB |      0%      Default |
-|                                         |                        |                  N/A |
-+-----------------------------------------+------------------------+----------------------+
-                                                                                         
-+-----------------------------------------------------------------------------------------+
-| Processes:                                                                              |
-|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
-|        ID   ID                                                               Usage      |
-|=========================================================================================|
-|  No running processes found                                                             |
-+-----------------------------------------------------------------------------------------+
 ```
 
 nvidia-container-toolkit 被安装到 `/usr/local/nvidia/toolkit`
