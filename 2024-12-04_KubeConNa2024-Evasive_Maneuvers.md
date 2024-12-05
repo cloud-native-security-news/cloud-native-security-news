@@ -1,12 +1,13 @@
 ---
 
 tags: 云原生安全资讯,安全会议,k8s,躲避防御
-spec: v0.1.0
+author: noirfate
+spec: v0.1.1
 version: v0.1.0
 
 ---
 
-# [KubeCon + CloudNativeCon North America 2024]: Evasive Maneuvers：Strategies to Overcome Runtime Detection Tools
+# [Cloud Native SecurityCon North America 2024] Evasive Maneuvers：Strategies to Overcome Runtime Detection Tools
 
 | Item            | Content        | Note     |
 |-----------------|----------------|----------|
