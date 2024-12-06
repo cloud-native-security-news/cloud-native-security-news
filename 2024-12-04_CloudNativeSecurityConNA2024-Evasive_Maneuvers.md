@@ -12,7 +12,7 @@ version: v0.1.0
 | Item            | Content        | Note     |
 |-----------------|----------------|----------|
 | Talk Name   | Evasive Maneuvers：Strategies to Overcome Runtime Detection Tools |
-| Conference Name | KubeCon + CloudNativeCon North America 2024 |
+| Conference Name | Cloud Native SecurityCon North America 2024 |
 | Talker          |  Amit Schendel  |
 | Date            | 2024-06-26 |
 | Materials       | [schedule](https://cloudnativesecurityconna24.sched.com/event/1dCUy/evasive-maneuvers-strategies-to-overcome-runtime-detection-tools-amit-schendel-armo)   |
