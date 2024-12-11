@@ -9,7 +9,7 @@
 
 ## 云原生安全资讯索引
 
-+ [2024.12.11 - [CloudNativeCon North America 2024]: From Risks to Resilience: Leveraging CNCF Projects Against Kubernetes' OWASP Top 10](./2024-12-11_KubeConNa2024-RisksToResilience.md)
++ [2024.12.11 - [CloudNativeCon North America 2024]: From Risks to Resilience: Leveraging CNCF Projects Against Kubernetes' OWASP Top 10](./2024-12-11_CloudNativeSecurityConNA2024-RisksToResilience.md)
 + [2024.12.04 - [Cloud Native SecurityCon North America 2024] Evasive Maneuvers：Strategies to Overcome Runtime Detection Tools](./2024-12-04_CloudNativeSecurityConNA2024-Evasive_Maneuvers.md)
 + [2024.11.27 - [KubeCon + CloudNativeCon Europe 2024] The State of K8sGPT: Your Troubleshooting Companion](./2024-11-27_KubeConEu2024-K8sGPT.md)
 + [2024.11.21 - [KubeCon + CloudNativeCon Europe 2024] Living off the Land Techniques in Managed Kubernetes Clusters - Ronen Shustin&Shay Berkovich, Wiz](./2024-11-21_LOTL-in-K8S.md)
