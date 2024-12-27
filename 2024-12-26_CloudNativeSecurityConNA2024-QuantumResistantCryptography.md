@@ -50,7 +50,7 @@ PQ是`Post-Quantum`的缩写，中文意思是`后量子`
 NIST其实从2016年就开始了PQC标准的研究，在2024年8月13日发布了最终标准[FIPS 203](https://csrc.nist.gov/pubs/fips/203/final)、[FIPS 204](https://csrc.nist.gov/pubs/fips/204/final)、[FIPS 205](https://csrc.nist.gov/pubs/fips/205/final)，公布了3个PQC：
 
 - ML-KEM
-`ML-KEM`是指基于模块学习误差问题（Module Learning with Errors，MLWE）的密钥封装机制（Key Encapsulation Mechanism，KEM），代表算法为`CRYSTALS-Kyber`，下面表格中的`Size`的单位是字节
+`ML-KEM`是指基于MLWE（Module Learning with Errors）的密钥封装机制（Key Encapsulation Mechanism，KEM），代表算法为`CRYSTALS-Kyber`，下面表格中的`Size`的单位是字节
 
 | Parameter | Encapsulation Key Size | Decapsulation Key Size |	Ciphertext Size | Shared Key Size |
 | ---- | ---- | ---- | ---- | ---- |
@@ -59,7 +59,7 @@ NIST其实从2016年就开始了PQC标准的研究，在2024年8月13日发布�
 | ML-KEM-1024 | 1,568 | 3,168 | 1,568 | 32 |
 
 - ML-DSA
-`ML-DSA`是指基于模块学习误差问题（Module Learning with Errors, MLWE）的数字签名算法（Digital Signature Algorithm, DSA），代表算法为`CRYSTALS-Dilithium`，下面表格中的`Size`的单位是字节
+`ML-DSA`是指基于MLWE（Module Learning with Errors）的数字签名算法（Digital Signature Algorithm, DSA），代表算法为`CRYSTALS-Dilithium`，下面表格中的`Size`的单位是字节
 
 | Parameter | Private Key Size | Public Key Size | Signature Size |
 | ---- | ---- | ---- | ---- |
