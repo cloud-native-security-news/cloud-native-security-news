@@ -7,7 +7,7 @@ version: v0.1.0
 
 ---
 
-# [CloudNativeCon North America 2024]: From Risks to Resilience: Leveraging CNCF Projects Against Kubernetes' OWASP Top 10
+# [CloudNativeSecurityCon North America 2024]: From Risks to Resilience: Leveraging CNCF Projects Against Kubernetes' OWASP Top 10
 
 | Item            | Content        | Note     |
 |-----------------|----------------|----------|
