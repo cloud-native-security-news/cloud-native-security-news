@@ -8,7 +8,8 @@
 4. push 总结至 git 仓库
 
 ## 云原生安全资讯索引
-
++ [2024.12.26 - [CloudNativeSecurityConNA2024] Shadow Vulnerabilities in AI/ML Data Stacks - What You Don’t Know Can Hurt You](2024-12-26_CloudNativeSecurityConNA2024-ShadowVulnerabilities.md) - AI影子漏洞
++ [2024.12.26 - [CloudNativeSecurityConNA2024] Navigating the Quantum Readiness Journey: Securing Kubernetes with Quantum-Resistant Cryptography](2024-12-26_CloudNativeSecurityConNA2024-QuantumResistantCryptography.md) - 后量子密码&k8s
 + [2024.12.11 - [CloudNativeCon North America 2024]: From Risks to Resilience: Leveraging CNCF Projects Against Kubernetes' OWASP Top 10](./2024-12-11_CloudNativeSecurityConNA2024-RisksToResilience.md) - 使用CNCF项目解决OWASP K8S Top 10
 + [2024.12.04 - [Cloud Native SecurityCon North America 2024] Evasive Maneuvers：Strategies to Overcome Runtime Detection Tools](./2024-12-04_CloudNativeSecurityConNA2024-Evasive_Maneuvers.md) - 躲避防御策略
 + [2024.12.02 - [KubeCon + CloudNativeCon Europe 2024]: Mastering GPU Management in Kubernetes Using the Operator Pattern](./2024-12-02_nvidia-k8s-gpu-operator.md) - 介绍 nvidia k8s gpu-operator
