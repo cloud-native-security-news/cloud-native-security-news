@@ -7,12 +7,12 @@ version: v0.1.0
 
 ---
 
-# [CloudNativeCon North America 2024]: Shadow Vulnerabilities in AI/ML Data Stacks - What You Don’t Know Can Hurt You
+# [CloudNativeSecurityConNA2024] Shadow Vulnerabilities in AI/ML Data Stacks - What You Don’t Know Can Hurt You
 
 | Item            | Content        | Note     |
 |-----------------|----------------|----------|
 | Talk Name   | Shadow Vulnerabilities in AI/ML Data Stacks - What You Don’t Know Can Hurt You |
-| Conference Name | CloudNativeCon North America 2024 |
+| Conference Name | Cloud Native SecurityCon North America 2024 |
 | Talker          |  Avi Lumelsky & Nitzan Mousseri  |
 | Date            | 2024-06-26 |
 | Materials       | [schedule](https://cloudnativesecurityconna24.sched.com/event/1dCTo/shadow-vulnerabilities-in-aiml-data-stacks-what-you-dont-know-can-hurt-you-avi-lumelsky-nitzan-mousseri-oligo-security)   |
