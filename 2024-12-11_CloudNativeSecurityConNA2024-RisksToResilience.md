@@ -7,12 +7,12 @@ version: v0.1.0
 
 ---
 
-# [CloudNativeCon North America 2024]: From Risks to Resilience: Leveraging CNCF Projects Against Kubernetes' OWASP Top 10
+# [CloudNativeSecurityConNA2024] From Risks to Resilience: Leveraging CNCF Projects Against Kubernetes' OWASP Top 10
 
 | Item            | Content        | Note     |
 |-----------------|----------------|----------|
 | Talk Name   | From Risks to Resilience: Leveraging CNCF Projects Against Kubernetes' OWASP Top 10 |
-| Conference Name | CloudNativeCon North America 2024 |
+| Conference Name | Cloud Native SecurityCon North America 2024 |
 | Talker          |  Hilliary Lipsig & Alireza Rahmani  |
 | Date            | 2024-06-27 |
 | Materials       | [schedule](https://cloudnativesecurityconna24.sched.com/event/1dCW5/from-risks-to-resilience-leveraging-cncf-projects-against-kubernetes-owasp-top-10-alireza-rahmani-hilliary-lipsig-red-hat)   |

@@ -8,13 +8,14 @@
 4. push 总结至 git 仓库
 
 ## 云原生安全资讯索引
+
 + [2024.12.26 - [CloudNativeSecurityConNA2024] Shadow Vulnerabilities in AI/ML Data Stacks - What You Don’t Know Can Hurt You](2024-12-26_CloudNativeSecurityConNA2024-ShadowVulnerabilities.md) - AI影子漏洞
 + [2024.12.26 - [CloudNativeSecurityConNA2024] Navigating the Quantum Readiness Journey: Securing Kubernetes with Quantum-Resistant Cryptography](2024-12-26_CloudNativeSecurityConNA2024-QuantumResistantCryptography.md) - 后量子密码&k8s
-+ [2024.12.11 - [CloudNativeCon North America 2024]: From Risks to Resilience: Leveraging CNCF Projects Against Kubernetes' OWASP Top 10](./2024-12-11_CloudNativeSecurityConNA2024-RisksToResilience.md) - 使用CNCF项目解决OWASP K8S Top 10
-+ [2024.12.04 - [Cloud Native SecurityCon North America 2024] Evasive Maneuvers：Strategies to Overcome Runtime Detection Tools](./2024-12-04_CloudNativeSecurityConNA2024-Evasive_Maneuvers.md) - 躲避防御策略
-+ [2024.12.02 - [KubeCon + CloudNativeCon Europe 2024]: Mastering GPU Management in Kubernetes Using the Operator Pattern](./2024-12-02_nvidia-k8s-gpu-operator.md) - 介绍 nvidia k8s gpu-operator
-+ [2024.11.27 - [KubeCon + CloudNativeCon Europe 2024] The State of K8sGPT: Your Troubleshooting Companion](./2024-11-27_KubeConEu2024-K8sGPT.md) - 介绍 K8sGPT
-+ [2024.11.21 - [KubeCon + CloudNativeCon Europe 2024] Living off the Land Techniques in Managed Kubernetes Clusters - Ronen Shustin&Shay Berkovich, Wiz](./2024-11-21_LOTL-in-K8S.md) - LOTL in K8S
++ [2024.12.11 - [CloudNativeSecurityConNA2024] From Risks to Resilience: Leveraging CNCF Projects Against Kubernetes' OWASP Top 10](./2024-12-11_CloudNativeSecurityConNA2024-RisksToResilience.md) - 使用CNCF项目解决OWASP K8S Top 10
++ [2024.12.04 - [CloudNativeSecurityConNA2024] Evasive Maneuvers：Strategies to Overcome Runtime Detection Tools](./2024-12-04_CloudNativeSecurityConNA2024-Evasive_Maneuvers.md) - 躲避防御策略
++ [2024.12.02 - [KubeConEU2024] Mastering GPU Management in Kubernetes Using the Operator Pattern](./2024-12-02_nvidia-k8s-gpu-operator.md) - 介绍 nvidia k8s gpu-operator
++ [2024.11.27 - [KubeConEU2024] The State of K8sGPT: Your Troubleshooting Companion](./2024-11-27_KubeConEu2024-K8sGPT.md) - 介绍 K8sGPT
++ [2024.11.21 - [KubeConEU2024] Living off the Land Techniques in Managed Kubernetes Clusters - Ronen Shustin&Shay Berkovich, Wiz](./2024-11-21_LOTL-in-K8S.md) - LOTL in K8S
 + [2024.08.10 - BlackHat2024_AWS影子资源实现账户接管](./2024-08-10_BlackHat2024_AWS影子资源实现账户接管.md)
 + [2024.05.28 - HTB Business CTF 2024 WriteUp](./2024-05-28-HTB_Business_CTF_2024_WriteUp.md) - 云方向
 + [2024.05.08 - 谷歌Flank潜藏3年的Github Action供应链攻击](./2024-05-08_google-flank-3-years-github-action-attack.md) - 一个不寻常的 Github Action 注入漏洞
