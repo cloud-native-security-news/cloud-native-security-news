@@ -7,12 +7,12 @@ version: v0.1.0
 
 ---
 
-# [CloudNativeCon North America 2024]: Navigating the Quantum Readiness Journey: Securing Kubernetes with Quantum-Resistant Cryptography
+# [CloudNativeSecurityConNA2024]: Navigating the Quantum Readiness Journey: Securing Kubernetes with Quantum-Resistant Cryptography
 
 | Item            | Content        | Note     |
 |-----------------|----------------|----------|
 | Talk Name   | Navigating the Quantum Readiness Journey: Securing Kubernetes with Quantum-Resistant Cryptography |
-| Conference Name | CloudNativeCon North America 2024 |
+| Conference Name | Cloud Native SecurityCon North America 2024 |
 | Talker          |  Tomas Gustavsson  |
 | Date            | 2024-06-26 |
 | Materials       | [schedule](https://cloudnativesecurityconna24.sched.com/event/1dCUC/navigating-the-quantum-readiness-journey-securing-kubernetes-with-quantum-resistant-cryptography-tomas-gustavsson-keyfactor)   |
