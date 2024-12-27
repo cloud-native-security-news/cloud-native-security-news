@@ -11,7 +11,7 @@
 
 + [2024.12.11 - [CloudNativeSecurityConNA2024] From Risks to Resilience: Leveraging CNCF Projects Against Kubernetes' OWASP Top 10](./2024-12-11_CloudNativeSecurityConNA2024-RisksToResilience.md) - 使用CNCF项目解决OWASP K8S Top 10
 + [2024.12.04 - [CloudNativeSecurityConNA2024] Evasive Maneuvers：Strategies to Overcome Runtime Detection Tools](./2024-12-04_CloudNativeSecurityConNA2024-Evasive_Maneuvers.md) - 躲避防御策略
-+ [2024.12.02 - [KubeConEU2024]: Mastering GPU Management in Kubernetes Using the Operator Pattern](./2024-12-02_nvidia-k8s-gpu-operator.md) - 介绍 nvidia k8s gpu-operator
++ [2024.12.02 - [KubeConEU2024] Mastering GPU Management in Kubernetes Using the Operator Pattern](./2024-12-02_nvidia-k8s-gpu-operator.md) - 介绍 nvidia k8s gpu-operator
 + [2024.11.27 - [KubeConEU2024] The State of K8sGPT: Your Troubleshooting Companion](./2024-11-27_KubeConEu2024-K8sGPT.md) - 介绍 K8sGPT
 + [2024.11.21 - [KubeConEU2024] Living off the Land Techniques in Managed Kubernetes Clusters - Ronen Shustin&Shay Berkovich, Wiz](./2024-11-21_LOTL-in-K8S.md) - LOTL in K8S
 + [2024.08.10 - BlackHat2024_AWS影子资源实现账户接管](./2024-08-10_BlackHat2024_AWS影子资源实现账户接管.md)
